@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_teori_kuis2/profile/homepage.dart';
+import 'package:mobile_teori_kuis2/profile/homePage.dart';
 
 void main() {
   runApp(const MainApp());

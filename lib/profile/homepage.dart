@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_teori_kuis2/features/cek_hari.dart';
-import 'package:mobile_teori_kuis2/features/konversi_waktu.dart';
+import 'package:mobile_teori_kuis2/features/cekHari.dart';
+import 'package:mobile_teori_kuis2/features/konversiWaktu.dart';
 import 'package:mobile_teori_kuis2/features/piramida.dart';
-import 'package:mobile_teori_kuis2/profile/profile_page.dart';
+import 'package:mobile_teori_kuis2/profile/profilePage.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -10,37 +10,62 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Row(
-        children: [
-          Expanded(
-              child: InkWell(
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Homepage(),
-                  ));
-            },
-            child: Container(
-              height: 80,
-              child: Icon(Icons.home),
-            ),
-          )),
-          Expanded(
-              child: InkWell(
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProfilePage(),
-                  ));
-            },
-            child: Container(
-              height: 80,
-              child: Icon(Icons.person),
-            ),
-          ))
-        ],
+      bottomNavigationBar: Container(
+        color: Colors.grey.shade400,
+        child: Row(
+          children: [
+            Expanded(
+                child: InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Homepage(),
+                    ));
+              },
+              child: Container(
+                height: 80,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Home',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(Icons.home),
+                  ],
+                ),
+              ),
+            )),
+            Expanded(
+                child: InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePage(),
+                    ));
+              },
+              child: Container(
+                height: 80,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Profile',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(Icons.person),
+                  ],
+                ),
+              ),
+            ))
+          ],
+        ),
       ),
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -49,15 +74,15 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: SizedBox(
           width: double.infinity,
-          height: 300,
+          height: 500,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(24.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Selamat Datang di Aplikasi Serba Ada",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  "Kuis 2 Pemrograman Aplikasi Mobile",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -71,10 +96,10 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.grey.shade300,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.black, width: 2),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      side: BorderSide(color: Colors.grey, width: 0.5),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
                       "Piramida",
@@ -94,10 +119,10 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.grey.shade300,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.black, width: 2),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      side: BorderSide(color: Colors.grey, width: 0.5),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
                       "Konversi Waktu",
@@ -117,10 +142,10 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.grey.shade300,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.black, width: 2),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      side: BorderSide(color: Colors.grey, width: 0.5),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
                       "Cek Hari",
