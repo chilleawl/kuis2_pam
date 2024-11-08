@@ -40,74 +40,88 @@ class _PiramidaState extends State<Piramida> {
   Widget build(BuildContext context) {
     final piramidaKey = GlobalKey<FormState>();
 
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: const Text(
-            'Kalkulator Piramida',
-          ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
+        title: const Text(
+          'Kalkulator Piramida',
         ),
-        body: Form(
+      ),
+      body: Center(
+        child: Form(
           key: piramidaKey,
           child: Padding(
-            padding: const EdgeInsets.only(
-                top: 62.0, left: 32, right: 32, bottom: 21),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: SizedBox(
-              height: 280,
+              height: 250,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Input panjang alas
-                  TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Tinggi Tidak Boleh Kosong";
-                      }
-                      return null;
-                    },
-                    controller: _baseController,
-                    decoration: InputDecoration(
-                      labelText: 'Panjang sisi alas (m)',
-                      border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
+                  Row(
+                    children: [
+                      // Input panjang alas
+                      Expanded(
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Tinggi Tidak Boleh Kosong";
+                            }
+                            return null;
+                          },
+                          controller: _baseController,
+                          decoration: InputDecoration(
+                            labelText: 'Panjang sisi alas (m)',
+                            border: const OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                          ),
+                          keyboardType: TextInputType.number,
+                        ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
+
+                      SizedBox(width: 12),
+
+                      // Input tinggi piramida
+                      Expanded(
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Tinggi Tidak Boleh Kosong";
+                            }
+                            return null;
+                          },
+                          controller: _heightController,
+                          decoration: InputDecoration(
+                            labelText: 'Tinggi piramida (m)',
+                            border: const OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightBlue, width: 2),
+                            ),
+                          ),
+                          keyboardType: TextInputType.number,
+                        ),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
-                      ),
-                    ),
-                    keyboardType: TextInputType.number,
+                    ],
                   ),
-                  const SizedBox(height: 16),
-                  // Input tinggi piramida
-                  TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Tinggi Tidak Boleh Kosong";
-                      }
-                      return null;
-                    },
-                    controller: _heightController,
-                    decoration: InputDecoration(
-                      labelText: 'Tinggi piramida (m)',
-                      border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 2),
-                      ),
-                    ),
-                    keyboardType: TextInputType.number,
-                  ),
-                  const SizedBox(height: 20),
+
                   // Tombol hitung
                   SizedBox(
                     width: double.infinity,
@@ -118,7 +132,7 @@ class _PiramidaState extends State<Piramida> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey.shade300,
+                        backgroundColor: Colors.lightBlue,
                         foregroundColor: Colors.black,
                         side: BorderSide(color: Colors.grey, width: 0.5),
                         padding: const EdgeInsets.symmetric(vertical: 8),

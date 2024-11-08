@@ -11,7 +11,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        color: Colors.grey.shade400,
+        color: Colors.lightBlue,
         child: Row(
           children: [
             Expanded(
@@ -25,17 +25,11 @@ class Homepage extends StatelessWidget {
               },
               child: Container(
                 height: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Home',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 8),
-                    Icon(Icons.home),
-                  ],
+                child: Center(
+                  child: Text(
+                    'Home',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             )),
@@ -50,17 +44,11 @@ class Homepage extends StatelessWidget {
               },
               child: Container(
                 height: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Profile',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 8),
-                    Icon(Icons.person),
-                  ],
+                child: Center(
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ))
@@ -69,7 +57,9 @@ class Homepage extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        title: Text('Home'),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: SizedBox(
@@ -81,8 +71,8 @@ class Homepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Kuis 2 Pemrograman Aplikasi Mobile",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+                  "KUIS 2 PAM",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -96,9 +86,8 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey.shade300,
+                      backgroundColor: Colors.lightBlue,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.grey, width: 0.5),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
@@ -119,9 +108,8 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey.shade300,
+                      backgroundColor: Colors.lightBlue,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.grey, width: 0.5),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(
@@ -142,9 +130,8 @@ class Homepage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey.shade300,
+                      backgroundColor: Colors.lightBlue,
                       foregroundColor: Colors.black,
-                      side: BorderSide(color: Colors.grey, width: 0.5),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
                     child: const Text(

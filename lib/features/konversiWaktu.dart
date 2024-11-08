@@ -35,7 +35,7 @@ class _KonversiWaktuState extends State<KonversiWaktu> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlue,
         title: Text('Konversi Waktu'),
       ),
       body: Center(
@@ -43,19 +43,38 @@ class _KonversiWaktuState extends State<KonversiWaktu> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Silahkan Input Waktu',
+              'Inputkan Waktu',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+            ),
+
+            SizedBox(
+              height: 22,
             ),
 
             // Input Field
             SizedBox(
-              width: 90,
+              width: 140,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                      width: 32,
+                      width: 62,
                       child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'HH',
+                          border: const OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                        ),
                         onChanged: (value) {
                           setState(() {
                             jam = int.parse(value);
@@ -75,8 +94,23 @@ class _KonversiWaktuState extends State<KonversiWaktu> {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                      width: 32,
+                      width: 62,
                       child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'MM',
+                          border: const OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.lightBlue, width: 2),
+                          ),
+                        ),
                         onChanged: (value) {
                           setState(() {
                             menit = int.parse(value);
@@ -106,10 +140,10 @@ class _KonversiWaktuState extends State<KonversiWaktu> {
                       convert();
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey.shade300,
+                      backgroundColor: Colors.lightBlue,
                       foregroundColor: Colors.black,
                       side: BorderSide(color: Colors.grey, width: 0.5),
-                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
                     ),
                     child: Text('Konversi'))),
 
